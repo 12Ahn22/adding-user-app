@@ -4,7 +4,7 @@ import styles from './UserList.module.css';
 
 const UserList = ({ userList }) => {
   return (
-    <div>
+    <div className={styles.container}>
       {userList.map((user) => (
         <User key={user.userName} {...user} />
       ))}
