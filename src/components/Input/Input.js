@@ -7,7 +7,7 @@ import styles from './Input.module.css';
 const Input = ({ label, value, onChangeHandler, type = 'text' }) => {
   const id = `${label}-input`;
   return (
-    <div>
+    <div className={styles.container}>
       <label className={styles.label} htmlFor={id}>
         {label}
       </label>
