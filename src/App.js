@@ -3,7 +3,7 @@ import AddCard from './components/AddCard/AddCard';
 import UserList from './components/UserList/UserList';
 
 function App() {
-  const [userList, setUserList] = useState([]);
+  const [userList, setUserList] = useState([{ userName: 'ayo', age: '30' }]);
 
   return (
     <div>
