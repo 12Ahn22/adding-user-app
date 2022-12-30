@@ -1,0 +1,8 @@
+.user {
+  padding: 0.8em;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+.user:not(:last-child) {
+  margin-bottom: 1em;
+}
