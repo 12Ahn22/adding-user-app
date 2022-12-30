@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <AddCard setUserList={setUserList} userList={userList} />
-      <UserList />
+      <UserList userList={userList} />
     </div>
   );
 }
