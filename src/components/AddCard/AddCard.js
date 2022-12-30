@@ -4,7 +4,7 @@ import styles from './AddCard.module.css';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 
-const AddCard = () => {
+const AddCard = ({ setUserList, userList }) => {
   const [userName, setUserName] = useState('');
   const [age, setAge] = useState('');
 
@@ -15,7 +15,13 @@ const AddCard = () => {
     setAge(event.target.value);
   };
 
-  const buttonClickHandler = () => {};
+  const buttonClickHandler = () => {
+    const newUser = {
+      userName,
+      age,
+    };
+    setUserList([...userList, newUser]);
+  };
 
   return (
     <div className={styles.container}>
