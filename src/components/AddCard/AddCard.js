@@ -18,7 +18,7 @@ const AddCard = () => {
   const buttonClickHandler = () => {};
 
   return (
-    <div>
+    <div className={styles.container}>
       <Input
         label={'Username'}
         value={userName}

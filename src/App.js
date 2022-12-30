@@ -1,5 +1,11 @@
+import AddCard from './components/AddCard/AddCard';
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <AddCard />
+    </div>
+  );
 }
 
 export default App;
