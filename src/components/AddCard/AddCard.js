@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styles from './AddCard.module.css';
 
 import Input from '../Input/Input';
 import Button from '../Button/Button';
+import Container from '../Container/Container';
 
 const AddCard = ({ setUserList, userList }) => {
   const [userName, setUserName] = useState('');
@@ -24,7 +24,7 @@ const AddCard = ({ setUserList, userList }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <Container>
       <Input
         label={'Username'}
         value={userName}
@@ -32,7 +32,7 @@ const AddCard = ({ setUserList, userList }) => {
       />
       <Input label={'Age(Years)'} value={age} onChangeHandler={ageHandler} />
       <Button text={'Add User'} onClickHandler={buttonClickHandler} />
-    </div>
+    </Container>
   );
 };
 

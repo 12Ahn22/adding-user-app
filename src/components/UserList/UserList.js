@@ -1,14 +1,14 @@
 import React from 'react';
+import Container from '../Container/Container';
 import User from './User/User';
-import styles from './UserList.module.css';
 
 const UserList = ({ userList }) => {
   return (
-    <div className={styles.container}>
+    <Container>
       {userList.map((user) => (
         <User key={user.userName} {...user} />
       ))}
-    </div>
+    </Container>
   );
 };
 
