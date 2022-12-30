@@ -1,16 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Button from '../Button/Button';
 import styles from './Modal.module.css';
 
-const Modal = ({ isOpen, onCloseHandler }) => {
-  // if (!isOpen) return <></>;
+const Modal = ({ isOpen, onCloseHandler, title, text }) => {
+  const modalRef = useRef();
+
+  if (!isOpen) return <></>;
+
+  const backgroundClickHandler = (event) => {
+    if (!modalRef.current || modalRef.current.contains(event.target)) return;
+    onCloseHandler();
+  };
 
   return (
-    <div className={styles.background}>
-      <div className={styles.modal}>
-        <h2 className={styles.title}>Invalid Input</h2>
+    <div
+      onClick={(event) => backgroundClickHandler(event)}
+      className={styles.background}
+    >
+      <div ref={modalRef} className={styles.modal}>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.content}>
-          <div>Please enter a vallid age</div>
+          <div>{text}</div>
           <Button text={'Okay'} onClickHandler={onCloseHandler} />
         </div>
       </div>
