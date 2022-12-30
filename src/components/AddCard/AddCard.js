@@ -4,7 +4,7 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 
-const AddCard = ({ setUserList, userList }) => {
+const AddCard = ({ setUserList, userList, openModal }) => {
   const [userName, setUserName] = useState('');
   const [age, setAge] = useState('');
 
@@ -20,7 +20,24 @@ const AddCard = ({ setUserList, userList }) => {
       userName,
       age,
     };
+
+    // 유효성 검사
+    // 빈값 검사
+    if (userName.trim().length === 0 || age.trim().length === 0) {
+      openModal('Empty Input', 'Please enter a input');
+      return;
+    }
+
+    // 나이 검사
+    const numberAge = Number(age);
+    if (Number.isNaN(numberAge) || numberAge < 0) {
+      openModal('Invalid Age', 'Please enter a valid age');
+      return;
+    }
+
     setUserList([...userList, newUser]);
+    setUserName('');
+    setAge('');
   };
 
   return (

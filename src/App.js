@@ -14,9 +14,21 @@ function App() {
     setIsOpen(false);
   };
 
+  const openModal = (title, text) => {
+    setModalMsg({
+      title,
+      text,
+    });
+    setIsOpen(true);
+  };
+
   return (
     <div>
-      <AddCard setUserList={setUserList} userList={userList} />
+      <AddCard
+        setUserList={setUserList}
+        userList={userList}
+        openModal={openModal}
+      />
       <UserList userList={userList} />
 
       <Modal
